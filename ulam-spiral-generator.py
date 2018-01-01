@@ -73,6 +73,9 @@ def generateSpiral(halfsize = 10):
 #testing for 50x50 plot
 R = 50
 M = (generateSpiral(R) > 0).astype(int)
+plt.title('Ulam spiral up to '+str((2*(R-1)+1)**2), fontsize=22)
+plt.axis('off')
+plt.axis('equal')
 plt.imshow(-1.0*M,cmap="hot",interpolation="nearest")
 plt.show()
 
@@ -87,6 +90,9 @@ if mass_produce: #generating a succession of gradually growing Ulam spirals
 
         M = (generateSpiral(R) > 0).astype(int)
 
-        plt.imshow(-1.0*M,cmap="hot",interpolation="nearest")
-        plt.savefig("ulams_prime_spiral_"+str((2*(R-1)+1)**2)+".png", bbox_inches='tight')
+        plt.title('Ulam spiral up to '+str((2*(R-1)+1)**2), fontsize=22)
+        plt.axis('off')
+        plt.axis('equal')
+        plt.imshow(-1.0*M, cmap="hot", interpolation='nearest')
+        plt.savefig("ulams_prime_spiral_"+str((2*(R-1)+1)**2)+".png", bbox_inches=None, pad_inches=0.1)
         print("done",R)
